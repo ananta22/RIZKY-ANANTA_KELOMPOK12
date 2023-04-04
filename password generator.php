@@ -32,3 +32,27 @@ if (isset($_POST['length']) && isset($_POST['combination'])) {
         echo "Password acak: " . $password;
     }
 }
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title> Password Generator</title>
+</head>
+<body>
+<form method="post">
+    <label for="length">Panjang Password:</label>
+    <input type="number" name="length" id="length" min="4" max="20" required>
+    <br>
+    <label for="combination">Jenis Kombinasi:</label>
+    <select name="combination" id="combination">
+        <option value="huruf">Huruf aja</option>
+        <option value="angka">Angka aja</option>
+        <option value="kombinasi">Kombinasi huruf dan angka</option>
+    </select>
+    <br>
+    <button type="submit">Buat Password</button>
+</form>
+</body>
+</html>
