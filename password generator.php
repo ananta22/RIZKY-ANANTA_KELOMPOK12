@@ -22,3 +22,13 @@ function generate_password($length, $combination) {
     }
     return $password;
 }
+if (isset($_POST['length']) && isset($_POST['combination'])) {
+    $length = intval($_POST['length']);
+    $combination = $_POST['combination'];
+    if ($length < 4 || $length > 20) {
+        echo "Panjang password harus antara 4 dan 20 karakter.";
+    } else {
+        $password = generate_password($length, $combination);
+        echo "Password acak: " . $password;
+    }
+}
